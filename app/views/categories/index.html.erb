@@ -1,0 +1,27 @@
+
+<h1>カテゴリー一覧</h1>
+
+<p class="text-right">
+  <%= link_to '新規登録', new_category_path, class: "btn btn-primary" %>
+</p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th><%= Category.human_attribute_name(:name) %></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name, category %></td>
+        <td class="text-right">
+          <%= link_to '編集', edit_category_path(category), class: "btn btn-primary" %>
+          <%= link_to '削除', category, class: "btn btn-danger", method: :delete, data: { confirm: 'カテゴリーを削除します。本当にいいですか?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

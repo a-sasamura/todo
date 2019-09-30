@@ -1,0 +1,31 @@
+<p id="notice">
+  <% if notice.presence %>
+    <div class="alert alert-info pb-2"><%= notice %></div>
+  <% end %>
+</p>
+
+<h1>ユーザー詳細</h1>
+
+<table class="table table-hover">
+  <tbody>
+    <tr>
+    　<th><%= User.human_attribute_name(:id) %></th>
+      <td><%= @user.id %></td>
+    </tr>
+    <tr>
+    　<th><%= User.human_attribute_name(:name) %></th>
+      <td><%= @user.name %></td>
+    </tr>
+    <tr>
+    　<th><%= User.human_attribute_name(:created_at) %></th>
+      <td><%= @user.created_at %></td>
+    </tr>
+    <tr>
+    　<th><%= User.human_attribute_name(:updated_at) %></th>
+      <td><%= @user.updated_at %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to '編集', edit_user_path(@user), class: "btn btn-primary" %>
+<%= link_to '戻る', users_path, class: "btn btn-outline-primary" %>

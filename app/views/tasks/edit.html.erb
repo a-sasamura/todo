@@ -1,0 +1,26 @@
+<h1>タスクの編集</h1>
+ 
+<%= form_with(model: @task, local: true, class: "pb-3") do |form| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <ul class="list-group list-group-flush pb-3">
+        <% @task.errors.full_messages.each do |message| %>
+          <li class="list-group-item list-group-item-danger"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+ 
+  <div class="field form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
+ 
+  <div class="actions">
+    <%= form.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>

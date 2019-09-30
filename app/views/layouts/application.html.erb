@@ -12,9 +12,24 @@
   <body>
     <div class="navbar navbar-expand-md navbar-light bg-light">
       <%= link_to "Todo", root_path, class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <%= link_to 'ユーザー', users_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'タスク', tasks_path, class: "nav-link" %>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="container pt-5">
-      <%= yield %>
-    </div>
+    <p id="notice">
+      <% if notice.presence %>
+        <div class="alert alert-info pb-2"><%= notice %></div>
+      <% end %>
+    </p>
+    <%= yield %>
+  </div>
   </body>
 </html>

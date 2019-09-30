@@ -208,9 +208,16 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      task: タスク
     attributes:
       user:
         id: ID
         name: 名前
         created_at: 作成日時　
+        updated_at: 更新日時
+      task:
+        id: ID
+        name: 名称
+        description: 説明
+        created_at: 作成日時
         updated_at: 更新日時

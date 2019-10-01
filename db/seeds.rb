@@ -12,5 +12,5 @@
   Category.create(name: "遊び")
 
   User.destroy_all
-  User.create(name: "a-sasamura")
-  User.create(name: "snoozer05")
+  User.create(name: "a-sasamura", password: "passw0rd", password_confirmation: "passw0rd")
+  User.create(name: "snoozer05", password: "passw0rd", password_confirmation: "passw0rd")

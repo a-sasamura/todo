@@ -9,6 +9,7 @@
   <thead>
     <tr>
       <th><%= Category.human_attribute_name(:name) %></th>
+      <th><%= Category.human_attribute_name(:user) %></th>
       <th></th>
     </tr>
   </thead>
@@ -17,6 +18,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= link_to category.name, category %></td>
+        <td><%= category.user.name %></td>
         <td class="text-right">
           <%= link_to '編集', edit_category_path(category), class: "btn btn-primary" %>
           <%= link_to '削除', category, class: "btn btn-danger", method: :delete, data: { confirm: 'カテゴリーを削除します。本当にいいですか?' } %>

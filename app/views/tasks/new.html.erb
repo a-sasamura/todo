@@ -14,7 +14,12 @@
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-control" %>
   </div>
- 
+
+  <div class="field form-group">
+    <%= form.label :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name, {}, {class: "form-control"} %>
+  </div>
+
   <div class="field form-group">
     <%= form.label :description %>
     <%= form.text_area :description, class: "form-control" %>

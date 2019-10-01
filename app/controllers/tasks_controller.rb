@@ -39,6 +39,17 @@ class TasksController < ApplicationController
     redirect_to tasks_path, notice: 'タスクが削除されました'
   end
 
+  def search
+    search_condition = params.require(:search_condition).permit(:query)
+    if search_condition[:query].present?
+      #sqlインジェクションの対応をした記述方法
+      @tasks = Task.where("name LIKE :q or description LIKE :q", q: "%#{search_condition[:query]}%")
+    else
+      @tasks = Task.all
+    end
+ 
+    render :index
+  end
 
   
 end

@@ -8,7 +8,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    task_params = params.require(:task).permit(:name, :user_id, :description)
+    task_params = params.require(:task).permit(:name, :user_id, :description, :category_id)
     @task = Task.new(task_params)
   
     if @task.save
@@ -24,7 +24,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    task_params = params.require(:task).permit(:name, :user_id, :description)
+    task_params = params.require(:task).permit(:name, :user_id, :description, :category_id)
  
     if @task.update(task_params)
       redirect_to tasks_path, notice: 'タスクが更新されました'

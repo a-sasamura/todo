@@ -9,6 +9,7 @@
     <tr>
       <th><%= Task.human_attribute_name(:name) %></th>
       <th><%= Task.human_attribute_name(:user) %></th>
+      <th><%= Task.human_attribute_name(:category) %></th>
       <th><%= Task.human_attribute_name(:description) %></th>
       <th><%= Task.human_attribute_name(:created_at) %></th>
       <th><%= Task.human_attribute_name(:updated_at) %></th>
@@ -20,6 +21,7 @@
       <tr>
         <td><%= task.name %></td>
         <td><%= task.user.name %></td>
+        <td><%= task.category.name %></td>
         <td><%= task.description %></td>
         <td><%= task.created_at %></td>
         <td><%= task.updated_at %></td>

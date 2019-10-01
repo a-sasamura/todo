@@ -3,4 +3,6 @@ class Task < ApplicationRecord
 
   #ユーザーの持ち物（単数形）
   belongs_to :user
+
+  belongs_to :category
 end

@@ -16,6 +16,11 @@
   </div>
 
   <div class="field form-group">
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name, {}, {class: "form-control"} %>
+  </div>
+
+  <div class="field form-group">
     <%= form.label :user_id %>
     <%= form.collection_select :user_id, User.all, :id, :name, {}, {class: "form-control"} %>
   </div>
